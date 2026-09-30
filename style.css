@@ -1,0 +1,888 @@
+/* ==========================================
+   GENERAL
+========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: "Poppins", sans-serif;
+
+    min-height: 100vh;
+
+    background:
+        radial-gradient(circle at top left,
+        #fff1f6,
+        transparent 40%),
+
+        radial-gradient(circle at bottom right,
+        #ffe0ec,
+        transparent 40%),
+
+        #fff5f8;
+
+    color: #54233d;
+
+    overflow-x: hidden;
+}
+
+
+/* ==========================================
+   PAGE SYSTEM
+========================================== */
+
+.page {
+    min-height: 100vh;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px 20px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.page.active {
+    display: flex;
+
+    animation: pageAppear 0.6s ease;
+}
+
+
+@keyframes pageAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* ==========================================
+   COMMON CARD
+========================================== */
+
+.card {
+    width: 100%;
+    max-width: 650px;
+
+    background: rgba(255, 255, 255, 0.95);
+
+    border-radius: 30px;
+
+    padding: 55px 45px;
+
+    text-align: center;
+
+    box-shadow:
+        0 20px 60px rgba(185, 70, 110, 0.15);
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+
+/* ==========================================
+   HEADINGS
+========================================== */
+
+h1 {
+    font-size: 42px;
+
+    color: #8e2851;
+
+    margin-bottom: 20px;
+
+    font-family: "Dancing Script", cursive;
+}
+
+
+h2 {
+    color: #672742;
+
+    font-size: 25px;
+
+    line-height: 1.5;
+
+    margin-bottom: 30px;
+}
+
+
+.romantic-text {
+    font-size: 18px;
+
+    line-height: 1.8;
+
+    margin-bottom: 15px;
+
+    color: #71334d;
+}
+
+
+.small-text {
+    font-size: 14px;
+
+    color: #9a6579;
+
+    margin-bottom: 30px;
+}
+
+
+.love-message {
+    font-family: "Dancing Script", cursive;
+
+    font-size: 30px;
+
+    color: #e91e63;
+
+    margin: 25px 0;
+}
+
+
+/* ==========================================
+   HEART
+========================================== */
+
+.big-heart {
+    font-size: 65px;
+
+    margin-bottom: 15px;
+
+    animation: heartBeat 1.4s infinite;
+}
+
+
+@keyframes heartBeat {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+
+}
+
+
+/* ==========================================
+   BUTTON
+========================================== */
+
+.main-button {
+    border: none;
+
+    background: linear-gradient(
+        135deg,
+        #ec6f9d,
+        #e91e63
+    );
+
+    color: white;
+
+    padding: 15px 30px;
+
+    border-radius: 50px;
+
+    font-size: 15px;
+
+    font-family: "Poppins", sans-serif;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 25px rgba(233, 30, 99, 0.25);
+
+    transition: all 0.3s ease;
+}
+
+
+.main-button:hover {
+    transform: translateY(-3px) scale(1.03);
+
+    box-shadow:
+        0 15px 30px rgba(233, 30, 99, 0.35);
+}
+
+
+.main-button:active {
+    transform: scale(0.96);
+}
+
+
+/* ==========================================
+   DATE INPUT
+========================================== */
+
+.date-input {
+    width: 100%;
+
+    max-width: 350px;
+
+    padding: 15px 18px;
+
+    border: 2px solid #f2aac3;
+
+    border-radius: 15px;
+
+    outline: none;
+
+    font-size: 16px;
+
+    font-family: "Poppins", sans-serif;
+
+    color: #54233d;
+
+    background: #fff8fa;
+
+    margin-bottom: 10px;
+}
+
+
+.date-input:focus {
+    border-color: #e91e63;
+
+    box-shadow:
+        0 0 0 4px rgba(233, 30, 99, 0.1);
+}
+
+
+.error-message {
+    min-height: 25px;
+
+    color: #e91e63;
+
+    font-size: 14px;
+
+    margin-bottom: 15px;
+}
+
+
+/* ==========================================
+   QUIZ CARD
+========================================== */
+
+.quiz-card {
+    width: 100%;
+
+    max-width: 720px;
+
+    background: white;
+
+    padding: 40px;
+
+    border-radius: 28px;
+
+    box-shadow:
+        0 20px 60px rgba(185, 70, 110, 0.15);
+
+    text-align: center;
+}
+
+
+.quiz-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 20px;
+}
+
+
+.quiz-title {
+    color: #e91e63;
+
+    font-weight: 700;
+
+    font-size: 16px;
+}
+
+
+#questionNumber {
+    color: #e91e63;
+
+    font-weight: 700;
+
+    font-size: 15px;
+}
+
+
+/* ==========================================
+   PROGRESS BAR
+========================================== */
+
+.quiz-progress {
+    width: 100%;
+
+    height: 8px;
+
+    background: #fce2eb;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    margin-bottom: 35px;
+}
+
+
+#progressBar {
+    height: 100%;
+
+    width: 20%;
+
+    background: linear-gradient(
+        90deg,
+        #ec6f9d,
+        #e91e63
+    );
+
+    border-radius: 20px;
+
+    transition: width 0.4s ease;
+}
+
+
+/* ==========================================
+   QUESTION
+========================================== */
+
+#questionText {
+    font-size: 24px;
+
+    color: #54233d;
+
+    min-height: 70px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+/* ==========================================
+   OPTIONS
+========================================== */
+
+.options-container {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+}
+
+
+.quiz-option {
+    width: 100%;
+
+    padding: 16px 20px;
+
+    border: 2px solid #f0b1c7;
+
+    border-radius: 15px;
+
+    background: white;
+
+    color: #54233d;
+
+    font-size: 16px;
+
+    font-family: "Poppins", sans-serif;
+
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+
+    text-align: left;
+}
+
+
+.quiz-option:hover {
+    background: #fff0f5;
+
+    border-color: #e91e63;
+
+    transform: translateY(-2px);
+}
+
+
+.quiz-option.correct {
+    background: #d7f8df;
+
+    border-color: #28a745;
+
+    color: #176b2c;
+}
+
+
+.quiz-option.wrong {
+    background: #ffd9df;
+
+    border-color: #dc3545;
+
+    color: #8a1c29;
+}
+
+
+.quiz-option:disabled {
+    cursor: default;
+}
+
+
+.quiz-option:disabled:hover {
+    transform: none;
+}
+
+
+/* ==========================================
+   QUIZ FEEDBACK
+========================================== */
+
+.quiz-feedback {
+    min-height: 30px;
+
+    margin-top: 20px;
+
+    font-weight: 600;
+
+    color: #e91e63;
+}
+
+
+.retry-message {
+    color: #e91e63;
+
+    font-weight: 600;
+
+    margin-top: 15px;
+}
+
+
+/* ==========================================
+   CONGRATULATIONS
+========================================== */
+
+.success-icon {
+    font-size: 75px;
+
+    margin-bottom: 15px;
+
+    animation: bounce 1s infinite alternate;
+}
+
+
+@keyframes bounce {
+
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-10px);
+    }
+
+}
+
+
+.score-text {
+    font-size: 20px;
+
+    color: #e91e63;
+
+    font-weight: 700;
+
+    margin-bottom: 20px;
+}
+
+
+/* ==========================================
+   FINAL PAGE
+========================================== */
+
+.final-page {
+    overflow: hidden;
+
+    background:
+        radial-gradient(circle at center,
+        #fff0f5,
+        #ffd7e6,
+        #fff5f8);
+}
+
+
+.final-content {
+    position: relative;
+
+    z-index: 20;
+
+    text-align: center;
+
+    max-width: 850px;
+
+    padding: 40px 20px;
+}
+
+
+.final-content h1 {
+    font-size: clamp(42px, 7vw, 82px);
+
+    color: #d7195a;
+
+    text-shadow:
+        0 5px 20px rgba(215, 25, 90, 0.2);
+
+    animation: finalTitle 1.5s ease;
+}
+
+
+@keyframes finalTitle {
+
+    0% {
+        opacity: 0;
+
+        transform: scale(0.5);
+    }
+
+    70% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform: scale(1);
+    }
+
+}
+
+
+.final-hearts {
+    font-size: 45px;
+
+    margin-bottom: 20px;
+
+    animation: heartBeat 1.2s infinite;
+}
+
+
+.final-subtitle {
+    font-family: "Dancing Script", cursive;
+
+    font-size: 35px;
+
+    color: #8e2851;
+
+    margin: 20px 0;
+}
+
+
+.final-message {
+    font-size: 18px;
+
+    color: #71334d;
+
+    margin: 10px 0;
+}
+
+
+.final-emojis {
+    font-size: 35px;
+
+    margin: 30px 0;
+
+    animation: emojiFloat 2s ease-in-out infinite;
+}
+
+
+@keyframes emojiFloat {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+
+}
+
+
+.forever {
+    font-family: "Dancing Script", cursive;
+
+    font-size: 30px;
+
+    color: #e91e63;
+}
+
+
+/* ==========================================
+   BLASTERS
+========================================== */
+
+.blaster {
+    position: fixed;
+
+    z-index: 10;
+
+    font-size: 55px;
+
+    animation:
+        blast 1.5s ease-out infinite;
+}
+
+
+.blaster-left {
+    left: 20px;
+
+    bottom: 30%;
+}
+
+
+.blaster-right {
+    right: 20px;
+
+    bottom: 30%;
+
+    animation-delay: 0.5s;
+}
+
+
+.blaster-top-left {
+    left: 10%;
+
+    top: 15%;
+
+    animation-delay: 0.3s;
+}
+
+
+.blaster-top-right {
+    right: 10%;
+
+    top: 15%;
+
+    animation-delay: 0.8s;
+}
+
+
+@keyframes blast {
+
+    0% {
+        transform: scale(0.5) rotate(0deg);
+
+        opacity: 0.4;
+    }
+
+    50% {
+        transform: scale(1.4) rotate(15deg);
+
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(0.7) rotate(-15deg);
+
+        opacity: 0.4;
+    }
+
+}
+
+
+/* ==========================================
+   FLOATING HEART BACKGROUND
+========================================== */
+
+.floating-hearts span {
+    position: fixed;
+
+    z-index: 1;
+
+    opacity: 0.12;
+
+    font-size: 30px;
+
+    animation: floatBackground 8s linear infinite;
+}
+
+
+.floating-hearts span:nth-child(1) {
+    left: 5%;
+    animation-delay: 0s;
+}
+
+
+.floating-hearts span:nth-child(2) {
+    left: 20%;
+    animation-delay: 2s;
+}
+
+
+.floating-hearts span:nth-child(3) {
+    left: 40%;
+    animation-delay: 4s;
+}
+
+
+.floating-hearts span:nth-child(4) {
+    left: 60%;
+    animation-delay: 1s;
+}
+
+
+.floating-hearts span:nth-child(5) {
+    left: 75%;
+    animation-delay: 3s;
+}
+
+
+.floating-hearts span:nth-child(6) {
+    left: 88%;
+    animation-delay: 5s;
+}
+
+
+.floating-hearts span:nth-child(7) {
+    left: 50%;
+    animation-delay: 6s;
+}
+
+
+@keyframes floatBackground {
+
+    0% {
+        bottom: -50px;
+
+        transform: rotate(0deg);
+    }
+
+    100% {
+        bottom: 110%;
+
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* ==========================================
+   CELEBRATION PARTICLES
+========================================== */
+
+.celebration-particle {
+    position: fixed;
+
+    pointer-events: none;
+
+    z-index: 15;
+
+    animation: particleFall linear forwards;
+}
+
+
+@keyframes particleFall {
+
+    0% {
+        top: -60px;
+
+        opacity: 1;
+
+        transform: rotate(0deg);
+    }
+
+    100% {
+        top: 110vh;
+
+        opacity: 0;
+
+        transform: rotate(720deg);
+    }
+
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 600px) {
+
+    .card {
+        padding: 40px 22px;
+
+        border-radius: 25px;
+    }
+
+
+    h1 {
+        font-size: 36px;
+    }
+
+
+    .romantic-text {
+        font-size: 16px;
+    }
+
+
+    .quiz-card {
+        padding: 25px 18px;
+    }
+
+
+    .quiz-header {
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+
+    #questionText {
+        font-size: 20px;
+
+        min-height: 80px;
+    }
+
+
+    .quiz-option {
+        font-size: 14px;
+
+        padding: 14px;
+    }
+
+
+    .final-content h1 {
+        font-size: 45px;
+    }
+
+
+    .final-subtitle {
+        font-size: 28px;
+    }
+
+
+    .blaster {
+        font-size: 35px;
+    }
+
+}

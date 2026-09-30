@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Hiii My Dear Love ❤️</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet"
+          href="style.css">
+</head>
+
+<body>
+
+    <!-- ==========================================
+         BACKGROUND HEARTS
+    =========================================== -->
+
+    <div class="floating-hearts">
+        <span>❤️</span>
+        <span>💕</span>
+        <span>💗</span>
+        <span>💖</span>
+        <span>❤️</span>
+        <span>💕</span>
+        <span>💗</span>
+    </div>
+
+
+    <!-- ==========================================
+         PAGE 1
+    =========================================== -->
+
+    <section id="page1" class="page active">
+
+        <div class="card welcome-card">
+
+            <div class="big-heart">
+                ❤️
+            </div>
+
+            <h1>
+                Hiii My Dear Love
+            </h1>
+
+            <p class="romantic-text">
+                I made something special just for you... 💕
+            </p>
+
+            <p class="small-text">
+                Are you ready for a little surprise? 🥰
+            </p>
+
+            <button class="main-button"
+                    onclick="startSurprise()">
+
+                Click here to continue ❤️
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==========================================
+         PAGE 2 - ANNIVERSARY DATE
+    =========================================== -->
+
+    <section id="page2" class="page">
+
+        <div class="card date-card">
+
+            <div class="big-heart">
+                💕
+            </div>
+
+            <h1>
+                Enter Your Anniversary Date
+            </h1>
+
+            <p class="romantic-text">
+                Let's see if you remember our special day... 🥰
+            </p>
+
+            <input type="date"
+                   id="anniversaryDate"
+                   class="date-input">
+
+            <p id="dateError"
+               class="error-message">
+            </p>
+
+            <button class="main-button"
+                    onclick="checkDate()">
+
+                Click here to continue ❤️
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==========================================
+         PAGE 3 - QUIZ
+    =========================================== -->
+
+    <section id="page3" class="page">
+
+        <div class="quiz-card">
+
+            <div class="quiz-header">
+
+                <div class="quiz-title">
+                    ❤️ Our Little Quiz ❤️
+                </div>
+
+                <div id="questionNumber">
+                    1 / 5
+                </div>
+
+            </div>
+
+
+            <div class="quiz-progress">
+
+                <div id="progressBar"></div>
+
+            </div>
+
+
+            <h2 id="questionText">
+                Loading question...
+            </h2>
+
+
+            <div id="optionsContainer"
+                 class="options-container">
+
+            </div>
+
+
+            <p id="quizFeedback"
+               class="quiz-feedback">
+            </p>
+
+
+            <p id="retryMessage"
+               class="retry-message">
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==========================================
+         PAGE 4 - CONGRATULATIONS
+    =========================================== -->
+
+    <section id="page4" class="page">
+
+        <div class="card congratulations-card">
+
+            <div class="success-icon">
+                🎉
+            </div>
+
+            <h1>
+                Congratulations ❤️
+            </h1>
+
+            <p id="finalScore"
+               class="score-text">
+            </p>
+
+            <p class="romantic-text">
+                You know me so well! 🥰
+            </p>
+
+            <p class="small-text">
+                But wait... there is still one more surprise for you. 💕
+            </p>
+
+            <button class="main-button"
+                    onclick="congratulationsContinue()">
+
+                Click Here To Continue ❤️
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==========================================
+         PAGE 5 - ONE LAST THING
+    =========================================== -->
+
+    <section id="page5" class="page">
+
+        <div class="card last-card">
+
+            <div class="big-heart">
+                💖
+            </div>
+
+            <h1>
+                One Last Thing...
+            </h1>
+
+            <p class="romantic-text">
+                Before you see your surprise,
+                I want you to know something.
+            </p>
+
+            <p class="love-message">
+                You are very special to me. ❤️
+            </p>
+
+            <button class="main-button"
+                    onclick="showFinalSurprise()">
+
+                Click Here To Continue 💕
+                
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==========================================
+         PAGE 6 - FINAL SURPRISE
+    =========================================== -->
+
+    <section id="page6" class="page final-page">
+
+        <!-- Corner blasters -->
+
+        <div class="blaster blaster-left">
+            🎉
+        </div>
+
+        <div class="blaster blaster-right">
+            🎉
+        </div>
+
+        <div class="blaster blaster-top-left">
+            💥
+        </div>
+
+        <div class="blaster blaster-top-right">
+            💥
+        </div>
+
+
+        <!-- Celebration particles -->
+
+        <div id="celebrationContainer"></div>
+
+
+        <div class="final-content">
+
+            <div class="final-hearts">
+                ❤️ 💕 💖
+            </div>
+
+            <h1>
+                Happiiee Aniversary My Wife ❤️
+            </h1>
+
+            <p class="final-subtitle">
+                Happy Anniversary, my love! 🥰
+            </p>
+
+            <p class="final-message">
+                Every moment with you is special.
+            </p>
+
+            <p class="final-message">
+                Thank you for being a beautiful part of my life. ❤️
+            </p>
+
+            <div class="final-emojis">
+                💕 🥰 ❤️ 💍 🌹 ✨
+            </div>
+
+            <p class="forever">
+                Together forever ❤️
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
